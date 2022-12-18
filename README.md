@@ -44,10 +44,9 @@ Build
 ==
 1. `git clone https://github.com/QGB/yandex`
 2. `cd yandex`
-3. download `Yandex.deb` from https://browser.yandex.com/  
-4. download https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb (for Chrome Remote Desktop)  
-4. `docker build --tag yandex:1.0 .`  
-5. `sudo docker run -p 127.0.0.1:5900:5900 --name yandex -d yandex:1.0`  
+3. download `yandex.deb` from https://browser.yandex.com/
+3. `docker build --tag yandex:1.0 .`  
+4. `sudo docker run -p 127.0.0.1:5900:5900 --name yandex -d yandex:1.0`  
 
   [1]: https://www.google.com/intl/en/chrome/browser/privacy/eula_text.html
   [2]: https://code.google.com/p/chromium/issues/detail?id=490964
