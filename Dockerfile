@@ -14,8 +14,9 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list &&
 	x11vnc \
 	fluxbox \
 	eterm \
- fonts-arphic-ukai \
- fonts-arphic-uming 
+        xserver-xorg-video-dummy \
+        fonts-arphic-ukai \
+        fonts-arphic-uming 
  
 
 COPY Yandex.deb	/tmp/Yandex.deb
@@ -23,6 +24,10 @@ COPY Yandex.deb	/tmp/Yandex.deb
 RUN gdebi --non-interactive /tmp/Yandex.deb
 
 RUN apt-get install -y xvfb tmux htop vim lsof
+
+COPY chrome-remote-desktop_current_amd64.deb /tmp/chrome-remote-desktop_current_amd64.deb
+
+RUN gdebi --non-interactive /tmp/chrome-remote-desktop_current_amd64.deb
 
 COPY copyables /
 
